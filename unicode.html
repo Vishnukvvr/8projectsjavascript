@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unicode</title>
+    <style>
+        body{
+            background-color: rgb(64, 62, 62);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 2px white;
+            width: 300px;
+            margin-left: 40%;
+        }
+        h1{
+            font-weight: bold;
+            color: blueviolet;
+        }
+        #code{
+            font-size: 1rem;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        #button{
+            background-color: rgb(101, 117, 118);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        #button:hover{
+            background-color: aqua;
+        }
+        #text{
+            margin: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Get Unicode of a Character</h1>
+        <input type="text" id="code">
+        <button onclick="fun()" id="button">Unicode</button>
+        <p id="text">enjoy</p>
+    </div>
+    <script>
+        function fun(){
+            const input=document.getElementById("code").value;
+            if(input){
+                const unicode=input.charCodeAt(0);
+                const results=`the Unicode of ${input} is ${unicode}`;
+                document.getElementById("text").innerHTML=results;
+            }else{
+                alert("please enter a value");
+            }
+        }
+    </script>
+</body>
+</html>

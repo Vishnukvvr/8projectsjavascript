@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(72, 69, 69);
+        }
+    .bi-lightbulb{
+      color: black;
+    }
+    .bi-power{
+        color: black;
+        background-color: rgb(72, 69, 69);
+        border-radius: 50px;
+    }
+    .light{
+        display: flex;
+        justify-content: center;
+        align-items: center; margin-top: 10%;
+    }
+    .on-off{
+        display: flex;
+        justify-content: center;
+        align-items: center; margin-top: 10%;
+    }
+    body.on{
+        background-color: white;
+    }
+
+</style>
+</head>
+<body>
+    <div class="light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/>
+          </svg>
+    </div>
+    <div class="on-off">
+    <button  style="border-radius: 100px; background-color: rgb(72, 69, 69);" id="switch"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"  fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+        <path d="M7.5 1v7h1V1z"/>
+        <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+      </svg></button>
+    </div>
+    <script>
+       const butSwitch= document.querySelector("#switch");
+       const body=document.body;
+       butSwitch.addEventListener("click",()=>{
+         body.classList.toggle("on");
+       })
+    </script>
+</body>
+</html>

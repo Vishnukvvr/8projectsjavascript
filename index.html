@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+    <style>
+        body{
+            background-color: rgb(57, 56, 56);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+             text-align: center;
+        }
+        #name{
+            color: blueviolet;
+        }
+        #button{
+            background-color: rgb(100, 134, 134);
+            padding: 10px;
+            color: black;
+            border: 2px solid rgb(118, 144, 144);
+            border-radius: 10px;
+            margin-left: 45%;
+            box-shadow: 2px 2px 2px black;
+        }
+        #button:hover{
+            background-color: aqua;
+
+        }
+        a{
+            text-decoration: none;
+            font-size: 1rem;
+            color: rgb(188, 172, 172);
+        }
+
+        ul li{
+            margin: 10px;
+            list-style: none;
+        }
+        div a:hover{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello <span id="name">World!</span></h1>
+    <button type="submit" id="button" onclick="fun()">Enter your name</button>
+    <div>
+        <ul>
+       <li> <a href="light.html" target="_blank">light on-off⫸</a></li>
+       <li> <a href="random.html" target="_blank">Random Number Generator⫸</a></li>
+       <li><a href="randompassword.html" target="_blank">Generate a Random Number⫸</a></li>
+       <li>  <a href="email.html" target="_blank">Email correcr or not⫸</a></li>
+       <li> <a href="prime.html" target="_blank">Prime Number Checker⫸</a></li>
+       <li>  <a href="hidepassword.html" target="_blank">Password hide⫸</a></li>
+        <li> <a href="unicode.html" target="_blank">Get Unicode of a Character⫸</a></li>
+    </ul>
+    </div>
+    <script>
+       const nameText=document.getElementById("name");
+        function fun(){
+            changeText=prompt("Enter your name");
+            nameText.textContent=changeText+"!";
+        }
+    </script>
+</body>
+</html>

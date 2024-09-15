@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+        <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(61, 59, 59);
+            color: white;
+        }
+        .divbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #inputmail {
+            padding: 10px;
+            font-size: 1rem;
+        }
+        .correct {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="divbox">
+        <h1>Enter your email</h1>
+        <input type="email" id="inputmail" oninput="validateEmail()">
+        <div id="icon"></div>
+        <p class="correct">Enter a valid email!</p>
+    </div>
+<script>
+        let inputmail = document.getElementById("inputmail");
+        let error = document.querySelector(".correct");
+        let icon = document.getElementById("icon");
+
+        function validateEmail() {
+            icon.style.display = "inline-block";
+            let emailmail = inputmail.value.trim();
+
+            if (emailmail === "") {
+                icon.style.display = "none";
+                error.style.display = "none";
+                inputmail.style.border = '';
+            } else if (correctemail(emailmail)) {
+                icon.innerHTML = '⫸⫸⫸';
+                inputmail.style.border = '2px solid blue';
+                error.style.display = "none";
+            } else {
+                icon.innerHTML = '⨯⨯⨯';
+                inputmail.style.border = '2px solid red';
+                error.style.display = "block";
+            }
+        }
+
+        function correctemail(emailid) {
+            let atIndex = emailid.indexOf("@");
+            let dotIndex = emailid.lastIndexOf(".");
+            return (
+                atIndex > 0 &&
+                dotIndex > atIndex + 1 &&
+                dotIndex < emailid.length - 2
+            );
+        }
+</script>
+
+</body>
+</html>

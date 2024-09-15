@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime number</title>
+    <style>
+        body{
+            background-color: rgb(68, 65, 65);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #number{
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        #result{
+            margin: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        #enter{
+            margin: 20px;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 2px solid rgb(87, 103, 87);
+            background-color: rgb(98, 114, 98);
+            border-radius: 10px;
+        }
+        #enter:hover{
+            background-color: green;
+            box-shadow: 2px 2px 2px 2px white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Prime Number Checker</h1>
+        <input type="number" id="number">
+        <button id="enter">Enter</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded" ,function(){
+            let numberinput=document.getElementById("number");
+            let enterbutton =document.getElementById("enter");
+            let resultdisplay=document.getElementById("result");
+            enterbutton.addEventListener("click",function(){
+                const number=parseInt(numberinput.value);
+                if(isNaN(number)){
+                    resultdisplay.textContent="enter the number";
+                    resultdisplay.style.color="red";
+                }
+                if(isPrime(number)){
+                    resultdisplay.textContent=`${number} is a prime number`;
+                    resultdisplay.style.color="green";
+                }else{
+                    resultdisplay.textContent=`${number} is not a prime number`;
+                    resultdisplay.style.color="red";
+                }
+
+             } );
+             function isPrime(num){
+                if (num<=1) return false;
+                if (num<=3) return true;
+                if(num%2===0 || num%3===0) return false;
+
+                return true;
+             }
+
+        });
+    </script>
+</body>
+</html>
